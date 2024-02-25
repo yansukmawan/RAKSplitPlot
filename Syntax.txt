@@ -1,0 +1,102 @@
+library(readxl)
+
+split <- read_excel("D:/Analisis Statistika/RAKSplitPlot/split.xlsx")
+
+View(split)
+
+split$Waktu<-as.factor(split$Waktu)
+
+split$Dosis<-as.factor(split$Dosis)
+
+split$Kelompok<-as.factor(split$Kelompok)
+
+str(split)
+tibble [27 × 11] (S3: tbl_df/tbl/data.frame)
+ $ Waktu   : Factor w/ 3 levels "P1","P2","P3": 1 1 1 2 2 2 3 3 3 1 ...
+ $ Dosis   : Factor w/ 3 levels "N1","N2","N3": 1 2 3 1 2 3 1 2 3 1 ...
+ $ Kelompok: Factor w/ 3 levels "1","2","3": 1 1 1 1 1 1 1 1 1 2 ...
+ $ TT3     : num [1:27] 36.3 47 53.2 44.2 47.5 ...
+ $ DB3     : num [1:27] 21.8 31.4 33.6 24.9 32 ...
+ $ JD3     : num [1:27] 10 10.5 10.5 10.5 11.5 11.5 10 11 12.5 9 ...
+ $ LD3     : num [1:27] 184 240 274 180 213 ...
+ $ IKD3    : num [1:27] 41.4 53.6 58 39.8 57.1 ...
+ $ LF      : num [1:27] 9.18 10.59 7.82 8.45 11.39 ...
+ $ KS      : num [1:27] 0.176 0.175 0.171 0.153 0.222 ...
+ $ SD      : num [1:27] 33.5 33.7 33.9 33.6 32.8 ...
+
+library(agricolae)
+
+model<-with(split,sp.plot(Kelompok,Waktu,Dosis,TT3))
+ANALYSIS SPLIT PLOT:  TT3 
+Class level information
+
+Waktu 	:  P1 P2 P3 
+Dosis 	:  N1 N2 N3 
+Kelompok 	:  1 2 3 
+
+Number of observations:  27 
+
+Analysis of Variance Table
+
+Response: TT3
+            Df  Sum Sq Mean Sq F value    Pr(>F)    
+Kelompok     2   50.55   25.27     NaN       NaN    
+Waktu        2   50.23   25.11  2.6339    0.1863    
+Ea           4   38.14    9.53     NaN       NaN    
+Dosis        2 1219.54  609.77 30.1990 2.074e-05 ***
+Waktu:Dosis  4   31.96    7.99  0.3957    0.8080    
+Eb          12  242.30   20.19     NaN       NaN    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+cv(a) = 6.8 %, cv(b) = 9.8 %, Mean = 45.71296 
+
+model<-with(split,sp.plot(Kelompok,Waktu,Dosis,DB3))
+ANALYSIS SPLIT PLOT:  DB3 
+Class level information
+
+Waktu 	:  P1 P2 P3 
+Dosis 	:  N1 N2 N3 
+Kelompok 	:  1 2 3 
+
+Number of observations:  27 
+
+Analysis of Variance Table
+
+Response: DB3
+            Df Sum Sq Mean Sq F value    Pr(>F)    
+Kelompok     2  98.57  49.283     NaN       NaN    
+Waktu        2  20.09  10.046  8.0292   0.03977 *  
+Ea           4   5.00   1.251     NaN       NaN    
+Dosis        2 533.16 266.579 29.4662 2.344e-05 ***
+Waktu:Dosis  4  18.25   4.563  0.5044   0.73350    
+Eb          12 108.56   9.047     NaN       NaN    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+cv(a) = 4.2 %, cv(b) = 11.2 %, Mean = 26.74815 
+
+model<-with(split,sp.plot(Kelompok,Waktu,Dosis,JD3))
+ANALYSIS SPLIT PLOT:  JD3 
+Class level information
+
+Waktu 	:  P1 P2 P3 
+Dosis 	:  N1 N2 N3 
+Kelompok 	:  1 2 3 
+
+Number of observations:  27 
+
+Analysis of Variance Table
+
+Response: JD3
+            Df  Sum Sq Mean Sq F value    Pr(>F)    
+Kelompok     2  0.9074  0.4537     NaN       NaN    
+Waktu        2  6.1296  3.0648  11.821 0.0209389 *  
+Ea           4  1.0370  0.2593     NaN       NaN    
+Dosis        2 12.5185  6.2593  16.488 0.0003608 ***
+Waktu:Dosis  4  1.4259  0.3565   0.939 0.4743104    
+Eb          12  4.5556  0.3796     NaN       NaN    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+cv(a) = 4.8 %, cv(b) = 5.8 %, Mean = 10.68519 
