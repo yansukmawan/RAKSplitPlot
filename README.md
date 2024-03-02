@@ -15,3 +15,44 @@ doebioresearch
 PerformanceAnalytics
 corrplot
 ```
+
+```sh
+####ANOVA: split-plot####
+library(readxl)  #mengimpor data
+split <- read_excel("D:/Analisis Statistika/RAKSplitPlot/split.xlsx")
+View(split)  #menampilkan dataset
+str(split)  #menampilkan struktur data
+```
+
+```sh
+##mengubah struktur data##
+split$Waktu<-as.factor(split$Waktu)
+split$Dosis<-as.factor(split$Dosis)
+split$Kelompok<-as.factor(split$Kelompok)
+str(split)
+```
+
+```sh
+##ANOVA dan Uji Lanjut dengan BNJ, BNT, DMRT##
+library(doebioresearch)
+#splitplot(data, block, main.plot, sub.plot, mean.comparison.test)#  #ini adalah model yang digunakan
+splitplot(split[4],drip$Kelompok,drip$Waktu,drip$Dosis,1)  #ANOVA-LSD untuk TT3
+splitplot(split[4],drip$Kelompok,drip$Waktu,drip$Dosis,2)  #ANOVA-DMRT untuk TT3
+splitplot(split[4],drip$Kelompok,drip$Waktu,drip$Dosis,3)  #ANOVA-HSD untuk TT3
+splitplot(split[4:6],drip$Kelompok,drip$Waktu,drip$Dosis,2)  #ANOVA-DMRT untuk TT3, DB3, dan JD3
+```
+
+```sh
+##analisis korelasi##
+library(PerformanceAnalytics)
+my_dat<-split[, c(4,5,6)]
+chart.Correlation(my_dat, histogram = TRUE, pch=19)
+```
+![image](https://github.com/yansukmawan/RAKSplitPlot/assets/66309330/e1179222-8fc8-424d-903b-8bbe951870fb)
+
+```sh
+library(corrplot)
+cor_matrix = cor(my_dat)
+corrplot(cor_matrix, type = "upper", method = "circle", addCoef.col = "black", tl.col = "black", tl.srt = 45)
+```
+![image](https://github.com/yansukmawan/RAKSplitPlot/assets/66309330/6c15780b-e81a-49a7-8a38-b7adb96dcff1)
