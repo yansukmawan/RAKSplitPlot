@@ -23,6 +23,7 @@ split <- read_excel("D:/Analisis Statistika/RAKSplitPlot/split.xlsx")
 View(split)  #menampilkan dataset
 str(split)  #menampilkan struktur data
 ```
+![image](https://github.com/yansukmawan/RAKSplitPlot/assets/66309330/35bbd04c-5999-4007-a2a3-c31d8d63a2ed) 
 
 ```sh
 ##mengubah struktur data##
