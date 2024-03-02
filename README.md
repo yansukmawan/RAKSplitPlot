@@ -41,6 +41,12 @@ splitplot(split[4],drip$Kelompok,drip$Waktu,drip$Dosis,2)  #ANOVA-DMRT untuk TT3
 splitplot(split[4],drip$Kelompok,drip$Waktu,drip$Dosis,3)  #ANOVA-HSD untuk TT3
 splitplot(split[4:6],drip$Kelompok,drip$Waktu,drip$Dosis,2)  #ANOVA-DMRT untuk TT3, DB3, dan JD3
 ```
+![image](https://github.com/yansukmawan/RAKSplitPlot/assets/66309330/59c39d51-9da8-4835-9fc4-e36622ba8a2c)
+![image](https://github.com/yansukmawan/RAKSplitPlot/assets/66309330/8d520730-cdc2-4dfc-88f8-4723777596c7)
+![image](https://github.com/yansukmawan/RAKSplitPlot/assets/66309330/de022a4d-f151-4338-90e0-958c51cef056)
+![image](https://github.com/yansukmawan/RAKSplitPlot/assets/66309330/3e0b3509-9a63-47b5-b510-8445dc9eda89)
+![image](https://github.com/yansukmawan/RAKSplitPlot/assets/66309330/e581725f-4845-44cd-8fc2-21e7649ed740)
+![image](https://github.com/yansukmawan/RAKSplitPlot/assets/66309330/49c141c3-7865-4570-b71d-fdaddfb65c36)
 
 ```sh
 ##analisis korelasi##
