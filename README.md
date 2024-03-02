@@ -7,7 +7,7 @@ Contoh data yang disajikan adalah sebuah percobaan lapangan dengan rancangan spl
 
 Terdapat beberapa file yang dapat diunduh dan dipelajari, yaitu: file contoh data (split.xlsx) dan file syntax (dalam format txt dan R file).
 
-Package/library yang diperlukan:
+# Package/library yang diperlukan:
 
 ```sh
 readxl
@@ -16,6 +16,7 @@ PerformanceAnalytics
 corrplot
 ```
 
+# Syntax yang digunakan:
 ```sh
 ####ANOVA: split-plot####
 library(readxl)  #mengimpor data
