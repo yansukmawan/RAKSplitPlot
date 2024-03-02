@@ -19,7 +19,7 @@ splitplot(split[4],drip$Kelompok,drip$Waktu,drip$Dosis,2) #ANOVA-DMRT untuk TT3
 splitplot(split[4],drip$Kelompok,drip$Waktu,drip$Dosis,3) #ANOVA-HSD untuk TT3
 splitplot(split[4:6],drip$Kelompok,drip$Waktu,drip$Dosis,2) #ANOVA-DMRT untuk TT3, DB3, dan JD3
 
-####analisis korelasi####
+##analisis korelasi##
 library(PerformanceAnalytics)
 my_dat<-split[, c(4,5,6)]
 chart.Correlation(my_dat, histogram = TRUE, pch=19)
